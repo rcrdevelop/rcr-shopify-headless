@@ -3,7 +3,7 @@
 
 import { defineConfig } from "#q-app";
 
-export default defineConfig((/* ctx */) => {
+export default defineConfig((ctx) => {
   return {
     // https://v2.quasar.dev/quasar-cli-vite/prefetch-feature
     // preFetch: true,
@@ -31,6 +31,10 @@ export default defineConfig((/* ctx */) => {
 
     // https://v2.quasar.dev/quasar-cli-vite/quasar-config-file#build
     build: {
+      env: {
+        clientPrefix: ["QCLI_", "VITE_"],
+        file: ctx.dev ? [] : [".env.production"]
+      },
       target: {
         // browser: 'baseline-widely-available',
         // node: 'node22'
@@ -78,15 +82,15 @@ export default defineConfig((/* ctx */) => {
     framework: {
       config: {
         brand: {
-          primary: "#1D4ED8", // High-contrast Royal Blue (6.7:1 on white)
-          secondary: "#1E3A8A", // Deep Navy Blue (10.3:1 on white)
-          accent: "#0369A1", // Deep Sky Cyan (5.9:1 on white)
-          dark: "#0F172A", // Deep Slate Navy (16.1:1 on white)
-          "dark-page": "#1E293B", // Slate Navy (11.9:1 on white)
-          positive: "#047857", // Deep Emerald (5.5:1 on white)
-          negative: "#B91C1C", // Deep Crimson (6.5:1 on white)
-          info: "#1D4ED8", // Royal Blue (6.7:1 on white)
-          warning: "#B45309" // Deep Amber (5.0:1 on white)
+          primary: "#8B7CD8", // Soft Violet (pastel)
+          secondary: "#E9E4FA", // Lavender pastel
+          accent: "#F2AEC7", // Rose pastel
+          dark: "#3D3654", // Soft dark violet
+          "dark-page": "#5A5178", // Muted violet
+          positive: "#4FAE87", // Mint pastel
+          negative: "#D94F70", // Rose red pastel
+          info: "#8B7CD8", // Soft Violet
+          warning: "#E8A13D" // Soft amber
         }
       },
 
@@ -101,7 +105,7 @@ export default defineConfig((/* ctx */) => {
       // directives: [],
 
       // Quasar plugins
-      plugins: []
+      plugins: ["Notify"]
     },
 
     // animations: 'all', // --- includes all animations

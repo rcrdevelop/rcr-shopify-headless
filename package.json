@@ -22,7 +22,9 @@
     "typecheck": "vue-tsc --noEmit",
     "postinstall": "quasar prepare --silent",
     "deploy": "quasar build && firebase deploy",
-    "deploy:preview": "quasar build && firebase hosting:channel:deploy preview"
+    "deploy:preview": "quasar build && firebase hosting:channel:deploy preview",
+    "emulators": "firebase emulators:start --project demo-rcr-shop",
+    "emulate": "quasar build && firebase emulators:start --project demo-rcr-shop"
   },
   "dependencies": {
     "@quasar/extras": "^2.1.0",
